@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Face recognition with pico.js</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=768" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<h1>Face recognition with pico.js</h1>
+<div class="buttons">
+    <div>
+        <input id="facing-mode" type="checkbox" value="1" checked>
+        <span><label for="facing-mode">Camera switch(on: Front / off: Rear) ※Only for smartphone</label></span>
+    </div>
+    <div>
+        <input id="to-grayscale" type="checkbox" value="0">
+        <span><label for="to-grayscale">To grayscale</label></span>
+        <input id="debug" type="checkbox" value="0">
+        <span><label for="debug">Debug</label></span>
+    </div>
+</div>
+<div class="container">
+    <video id="camera" playsinline autoplay></video>
+    <canvas id="from-video"></canvas>
+    <div class="cliped-container"></div>
+    <div id="dummy-box">
+        <div class="bar">
+            <div class="range">
+                <span class="range-val-wrapper">Left and right margins: <span class="range-val"></span></span>
+                <input id="adjustment_of_x" type="range" min="0" max="60" value="15">
+            </div>
+            <div class="range">
+                <span class="range-val-wrapper">Top and bottom margins: <span class="range-val"></span></span>
+                <input id="adjustment_of_y" type="range" min="0" max="60" value="15">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/util/Stats.js"></script>
+<script src="js/pico.min.js"></script>
+<script src="js/face_recognition_with_pico.js"></script>
+</body>
+</html>
